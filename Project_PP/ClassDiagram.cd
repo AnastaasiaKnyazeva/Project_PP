@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Project_PP.AddOrderSparePartsWindow" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAIAA=</HashCode>
+      <FileName>AddOrderSparePartsWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.App">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_PP.CreateClient" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAIAAAAAAABAAAAAAAAAEAAI=</HashCode>
+      <FileName>CreateClient.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.CreateEquipment" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAIAAAAAEABAAAAAAAAAAAAI=</HashCode>
+      <FileName>CreateEquipment.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.142" />
+  </Class>
+  <Class Name="Project_PP.SearchOrderWindow" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIgAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>SearchOrderWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.UpdateStatusOrderSparePartsWindow" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>UpdateStatusOrderSparePartsWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.Classes.CheckFieldsClass">
+    <Position X="11" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQACAAAAABBAQAAQAIAAAAAAAAgAAyAAAAAAAABAQAA=</HashCode>
+      <FileName>Classes\CheckFieldsClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_PP.Classes.DataBaseClass">
+    <Position X="11.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\DataBaseClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_PP.Classes.DebugClass">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Classes\DebugClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_PP.Classes.FrameClass">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Classes\FrameClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_PP.Model.ClientTable">
+    <Position X="7.5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAABAAAAAgACAAAAEAAEAAAgIAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Model\ClientPartialClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_PP.Model.IssueEquipment">
+    <Position X="2.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAJAAAAAgAAAAAAAAAAAAAAAAAABEAAAAAAEAAA=</HashCode>
+      <FileName>Model\IssueEquipmentPartialClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_PP.Model.Knyazeva_PP_Entities">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QQACCABAAAAAQAAAAABAAQAEEABEAAAAAAAAAMAAAAA=</HashCode>
+      <FileName>Model\ModelDB.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_PP.Model.AcceptEquipment">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAggAAAAAAEAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Model\AcceptEquipment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_PP.Model.CostOfWork">
+    <Position X="4" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACIAAAAAAAgAAAAAAAABQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\CostOfWork.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_PP.Model.EquipmentInRepair">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAgAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Model\EquipmentInRepair.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_PP.Model.EquipmentTable">
+    <Position X="5.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIABAAAAAgAAAAAAAAAAAAAEAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Model\EquipmentTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_PP.Model.LoginedTable">
+    <Position X="9.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAgAAQAABAAAAAAIAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Model\LoginedTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_PP.Model.OrderSpareParts">
+    <Position X="11" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAhgAAAEAAAABQAAARAABABAAAAyAAAQAA=</HashCode>
+      <FileName>Model\OrderSpareParts.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_PP.Model.OrderTable">
+    <Position X="11" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACCACAAAAAgAAAAAAAARQEAAQkAAAABAAABMAAQAA=</HashCode>
+      <FileName>Model\OrderTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_PP.Model.RoleTable">
+    <Position X="7.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Model\RoleTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_PP.Model.StatusTable">
+    <Position X="0.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAQQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\StatusTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_PP.Model.TypeOrderTable">
+    <Position X="2.25" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\TypeOrderTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_PP.Model.UserTable">
+    <Position X="9.25" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAwAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Model\UserTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_PP.Pages.AcceptEquipment" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAABAAAAAAAAAAAIIAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Pages\AcceptEquipment.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.Pages.AcceptEquipmentPage" BaseTypeListCollapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAQAAAAAEABAAAAAABAAAAAA=</HashCode>
+      <FileName>Pages\AcceptEquipmentPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.Pages.AcceptEquipmentPrint" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Pages\AcceptEquipmentPrint.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.Pages.AuthorizationPage" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\AuthorizationPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.Pages.ChangePasswordPage" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAEAAAAAAABAAAAAAAAABAQA=</HashCode>
+      <FileName>Pages\ChangePasswordPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.Pages.EquipmentInRepair" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAIIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\EquipmentInRepair.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.Pages.FindOrderByNumberOrderPage" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIABAAAAAAAAAAAAAAIAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Pages\FindOrderByNumberOrderPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.Pages.FindOrderBySerialNumberPage" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIABAAAAAAAAAAAAAAIAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Pages\FindOrderBySerialNumberPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.Pages.IssueEquipment" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAIIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\IssueEquipment.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.Pages.IssueEquipmentPage" BaseTypeListCollapsed="true">
+    <Position X="4" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABgABCAAAAAAQAAAAAAAAAAAAABAAAAAAAAAAIAA=</HashCode>
+      <FileName>Pages\IssueEquipmentPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.Pages.IssueEquipmentPrint" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Pages\IssueEquipmentPrint.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Project_PP.Pages.MenuDirector" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAABAAAAhCAAAAAAAIAIAAAAAFAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\MenuDirector.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.Pages.MenuMaster" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAhAAAAAAAAIAAAAAAAFAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\MenuMaster.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.Pages.MenuPage" BaseTypeListCollapsed="true">
+    <Position X="4" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABAAAAgQAAAAAAAIAIAAQAAEAAAAAABAAIAAAg=</HashCode>
+      <FileName>Pages\MenuPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.Pages.MenuReceiver" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAABAAAAgCAAAAAAAAAIAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\MenuReceiver.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.Pages.OrderSpareParts" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABABQAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Pages\OrderSpareParts.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.Pages.PersonalAccountPage" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAQAAAAAAEAAAAAAABAAAAAAAAABAQA=</HashCode>
+      <FileName>Pages\PersonalAccountPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.Pages.RegistrationPage" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAABABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\RegistrationPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.Pages.ReportPage" BaseTypeListCollapsed="true">
+    <Position X="4" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\ReportPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.Pages.UsersPage" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABAAAAAAAAAAgAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\UsersPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Project_PP.Properties.Resources">
+    <Position X="6.5" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Project_PP.Properties.Settings">
+    <Position X="9.25" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

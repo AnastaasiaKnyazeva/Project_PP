@@ -1,0 +1,44 @@
+﻿<Window x:Class="Project_PP.SearchOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_PP"
+        Background="#D9D9D9"
+        mc:Ignorable="d"
+        Title="Ноутбук 1" Height="450" MinHeight="450" Width="800" MinWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0" Fill="{StaticResource acentColor}"/>
+        <TextBlock VerticalAlignment="Center" Style="{StaticResource tbBase}" Text="Найти"/>
+        <Grid Grid.Row="1" Margin="0,0,20,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1.7*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock VerticalAlignment="Center" Foreground="Black" Margin="10" Style="{StaticResource tbBase}">
+                Найти по ФИО, серийному<LineBreak/> номеру или номеру заказа
+            </TextBlock>
+            <TextBox TextChanged="tbSearch_TextChanged" FontFamily="{StaticResource fontApp}" FontSize="18" Grid.Column="1" Height="40" Margin="10" Name="tbSearch"/>
+        </Grid>
+        <ListView Margin="10" Grid.Row="2" Foreground="Black" FontFamily="{StaticResource fontApp}" FontSize="18" ScrollViewer.CanContentScroll="False" Name="listOrders" HorizontalContentAlignment="Stretch">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding ID}"/>
+                    <GridViewColumn Header="ФИО" DisplayMemberBinding="{Binding ClientTable.Fio, Mode=OneWay}"/>
+                    <GridViewColumn Header="Наименование" DisplayMemberBinding="{Binding EquipmentTable.NameEquipment}"/>
+                    <GridViewColumn Header="Серийный номер" DisplayMemberBinding="{Binding EquipmentTable.SerialNumber}"/>
+                    <GridViewColumn Header="Дата заказа" DisplayMemberBinding="{Binding DateOrder,StringFormat={}dd.MM.yyyy}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock Grid.Row="2" Name="tbEmpty" VerticalAlignment="Center" FontSize="30" Visibility="Collapsed" Foreground="Black" FontWeight="Bold" Text="Нет записей" Margin="10" Style="{StaticResource tbBase}"/>
+        <Button Click="btnBack_Click" HorizontalAlignment="Left" Grid.Row="3" Style="{StaticResource btnStyle}" Margin="10" Name="btnBack" Width="230" Content="Назад" Cursor="Hand"/>
+        <Button Click="btnAdd_Click" HorizontalAlignment="Right" Grid.Row="3" Style="{StaticResource btnStyle}" Margin="10" Name="btnAdd" Width="230" Content="Добавить" Cursor="Hand"/>
+    </Grid>
+</Window>

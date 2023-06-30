@@ -1,0 +1,20 @@
+﻿<Window x:Class="Project_PP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_PP"
+        mc:Ignorable="d"
+        Background="{StaticResource backgroundColor}"
+        Title="Ноутбук 1" Height="650" MinHeight="650" Width="820" MinWidth="820">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="{StaticResource acentColor}"/>
+        <Image Margin="0,5,0,10" VerticalAlignment="Center" Grid.Row="0" Source="\Resources\logo.png"/>
+        <Frame Name="frmMain" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>

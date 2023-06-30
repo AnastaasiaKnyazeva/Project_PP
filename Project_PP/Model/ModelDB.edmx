@@ -1,0 +1,810 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище Knyazeva_PPModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AcceptEquipment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Picking" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ClientTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SurnameClient" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NameClient" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PatronymicClient" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Adress" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CostOfWork">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdIssueEquipment" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Cost" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EquipmentInRepair">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EquipmentTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameEquipment" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SerialNumber" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Model" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IssueEquipment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Problem" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SumCost" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LoginedTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LoginUser" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PasswordUser" Type="int" Nullable="false" />
+          <Property Name="IdRole" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderSpareParts">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdOrder" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Link" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="IdStatus" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdClient" Type="int" Nullable="false" />
+          <Property Name="IdEquipment" Type="int" Nullable="false" />
+          <Property Name="Damage" Type="nvarchar(max)" />
+          <Property Name="DateOrder" Type="datetime" Nullable="false" />
+          <Property Name="TypeOrder" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RoleTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameRole" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StatusTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TypeOrderTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="SurnameUser" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NameUser" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__AcceptEquipm__ID__778AC167">
+          <End Role="OrderTable" Type="Self.OrderTable" Multiplicity="1" />
+          <End Role="AcceptEquipment" Type="Self.AcceptEquipment" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="OrderTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AcceptEquipment">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EquipmentInR__ID__74AE54BC">
+          <End Role="OrderTable" Type="Self.OrderTable" Multiplicity="1" />
+          <End Role="EquipmentInRepair" Type="Self.EquipmentInRepair" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="OrderTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EquipmentInRepair">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__IssueEquipme__ID__7A672E12">
+          <End Role="OrderTable" Type="Self.OrderTable" Multiplicity="1" />
+          <End Role="IssueEquipment" Type="Self.IssueEquipment" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="OrderTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="IssueEquipment">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LoginedTa__IdRol__398D8EEE">
+          <End Role="RoleTable" Type="Self.RoleTable" Multiplicity="1" />
+          <End Role="LoginedTable" Type="Self.LoginedTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RoleTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LoginedTable">
+              <PropertyRef Name="IdRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderSpar__IdSta__5CD6CB2B">
+          <End Role="StatusTable" Type="Self.StatusTable" Multiplicity="1" />
+          <End Role="OrderSpareParts" Type="Self.OrderSpareParts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderSpareParts">
+              <PropertyRef Name="IdStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderTabl__IdCli__5070F446">
+          <End Role="ClientTable" Type="Self.ClientTable" Multiplicity="1" />
+          <End Role="OrderTable" Type="Self.OrderTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClientTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderTable">
+              <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderTabl__IdEqu__5165187F">
+          <End Role="EquipmentTable" Type="Self.EquipmentTable" Multiplicity="1" />
+          <End Role="OrderTable" Type="Self.OrderTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EquipmentTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderTable">
+              <PropertyRef Name="IdEquipment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderTabl__TypeO__52593CB8">
+          <End Role="TypeOrderTable" Type="Self.TypeOrderTable" Multiplicity="1" />
+          <End Role="OrderTable" Type="Self.OrderTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeOrderTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderTable">
+              <PropertyRef Name="TypeOrder" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserTable__ID__3C69FB99">
+          <End Role="LoginedTable" Type="Self.LoginedTable" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserTable" Type="Self.UserTable" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="LoginedTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserTable">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CostOfWork_IssueEquipment">
+          <End Role="IssueEquipment" Type="Self.IssueEquipment" Multiplicity="1" />
+          <End Role="CostOfWork" Type="Self.CostOfWork" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IssueEquipment">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CostOfWork">
+              <PropertyRef Name="IdIssueEquipment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderSpareParts_OrderTable">
+          <End Role="OrderTable" Type="Self.OrderTable" Multiplicity="1" />
+          <End Role="OrderSpareParts" Type="Self.OrderSpareParts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderSpareParts">
+              <PropertyRef Name="IdOrder" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище Knyazeva_PPModelContainer">
+          <EntitySet Name="AcceptEquipment" EntityType="Self.AcceptEquipment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClientTable" EntityType="Self.ClientTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CostOfWork" EntityType="Self.CostOfWork" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EquipmentInRepair" EntityType="Self.EquipmentInRepair" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EquipmentTable" EntityType="Self.EquipmentTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IssueEquipment" EntityType="Self.IssueEquipment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoginedTable" EntityType="Self.LoginedTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderSpareParts" EntityType="Self.OrderSpareParts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderTable" EntityType="Self.OrderTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RoleTable" EntityType="Self.RoleTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusTable" EntityType="Self.StatusTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeOrderTable" EntityType="Self.TypeOrderTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserTable" EntityType="Self.UserTable" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__AcceptEquipm__ID__778AC167" Association="Self.FK__AcceptEquipm__ID__778AC167">
+            <End Role="OrderTable" EntitySet="OrderTable" />
+            <End Role="AcceptEquipment" EntitySet="AcceptEquipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EquipmentInR__ID__74AE54BC" Association="Self.FK__EquipmentInR__ID__74AE54BC">
+            <End Role="OrderTable" EntitySet="OrderTable" />
+            <End Role="EquipmentInRepair" EntitySet="EquipmentInRepair" />
+          </AssociationSet>
+          <AssociationSet Name="FK__IssueEquipme__ID__7A672E12" Association="Self.FK__IssueEquipme__ID__7A672E12">
+            <End Role="OrderTable" EntitySet="OrderTable" />
+            <End Role="IssueEquipment" EntitySet="IssueEquipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LoginedTa__IdRol__398D8EEE" Association="Self.FK__LoginedTa__IdRol__398D8EEE">
+            <End Role="RoleTable" EntitySet="RoleTable" />
+            <End Role="LoginedTable" EntitySet="LoginedTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderSpar__IdSta__5CD6CB2B" Association="Self.FK__OrderSpar__IdSta__5CD6CB2B">
+            <End Role="StatusTable" EntitySet="StatusTable" />
+            <End Role="OrderSpareParts" EntitySet="OrderSpareParts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderTabl__IdCli__5070F446" Association="Self.FK__OrderTabl__IdCli__5070F446">
+            <End Role="ClientTable" EntitySet="ClientTable" />
+            <End Role="OrderTable" EntitySet="OrderTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderTabl__IdEqu__5165187F" Association="Self.FK__OrderTabl__IdEqu__5165187F">
+            <End Role="EquipmentTable" EntitySet="EquipmentTable" />
+            <End Role="OrderTable" EntitySet="OrderTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderTabl__TypeO__52593CB8" Association="Self.FK__OrderTabl__TypeO__52593CB8">
+            <End Role="TypeOrderTable" EntitySet="TypeOrderTable" />
+            <End Role="OrderTable" EntitySet="OrderTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserTable__ID__3C69FB99" Association="Self.FK__UserTable__ID__3C69FB99">
+            <End Role="LoginedTable" EntitySet="LoginedTable" />
+            <End Role="UserTable" EntitySet="UserTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CostOfWork_IssueEquipment" Association="Self.FK_CostOfWork_IssueEquipment">
+            <End Role="IssueEquipment" EntitySet="IssueEquipment" />
+            <End Role="CostOfWork" EntitySet="CostOfWork" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderSpareParts_OrderTable" Association="Self.FK_OrderSpareParts_OrderTable">
+            <End Role="OrderTable" EntitySet="OrderTable" />
+            <End Role="OrderSpareParts" EntitySet="OrderSpareParts" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Knyazeva_PPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Knyazeva_PP_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AcceptEquipment" EntityType="Knyazeva_PPModel.AcceptEquipment" />
+          <EntitySet Name="ClientTable" EntityType="Knyazeva_PPModel.ClientTable" />
+          <EntitySet Name="CostOfWork" EntityType="Knyazeva_PPModel.CostOfWork" />
+          <EntitySet Name="EquipmentInRepair" EntityType="Knyazeva_PPModel.EquipmentInRepair" />
+          <EntitySet Name="EquipmentTable" EntityType="Knyazeva_PPModel.EquipmentTable" />
+          <EntitySet Name="IssueEquipment" EntityType="Knyazeva_PPModel.IssueEquipment" />
+          <EntitySet Name="LoginedTable" EntityType="Knyazeva_PPModel.LoginedTable" />
+          <EntitySet Name="OrderSpareParts" EntityType="Knyazeva_PPModel.OrderSpareParts" />
+          <EntitySet Name="OrderTable" EntityType="Knyazeva_PPModel.OrderTable" />
+          <EntitySet Name="RoleTable" EntityType="Knyazeva_PPModel.RoleTable" />
+          <EntitySet Name="StatusTable" EntityType="Knyazeva_PPModel.StatusTable" />
+          <EntitySet Name="TypeOrderTable" EntityType="Knyazeva_PPModel.TypeOrderTable" />
+          <EntitySet Name="UserTable" EntityType="Knyazeva_PPModel.UserTable" />
+          <AssociationSet Name="FK__AcceptEquipm__ID__778AC167" Association="Knyazeva_PPModel.FK__AcceptEquipm__ID__778AC167">
+            <End Role="OrderTable" EntitySet="OrderTable" />
+            <End Role="AcceptEquipment" EntitySet="AcceptEquipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderTabl__IdCli__5070F446" Association="Knyazeva_PPModel.FK__OrderTabl__IdCli__5070F446">
+            <End Role="ClientTable" EntitySet="ClientTable" />
+            <End Role="OrderTable" EntitySet="OrderTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CostOfWork_IssueEquipment" Association="Knyazeva_PPModel.FK_CostOfWork_IssueEquipment">
+            <End Role="IssueEquipment" EntitySet="IssueEquipment" />
+            <End Role="CostOfWork" EntitySet="CostOfWork" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EquipmentInR__ID__74AE54BC" Association="Knyazeva_PPModel.FK__EquipmentInR__ID__74AE54BC">
+            <End Role="OrderTable" EntitySet="OrderTable" />
+            <End Role="EquipmentInRepair" EntitySet="EquipmentInRepair" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderTabl__IdEqu__5165187F" Association="Knyazeva_PPModel.FK__OrderTabl__IdEqu__5165187F">
+            <End Role="EquipmentTable" EntitySet="EquipmentTable" />
+            <End Role="OrderTable" EntitySet="OrderTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK__IssueEquipme__ID__7A672E12" Association="Knyazeva_PPModel.FK__IssueEquipme__ID__7A672E12">
+            <End Role="OrderTable" EntitySet="OrderTable" />
+            <End Role="IssueEquipment" EntitySet="IssueEquipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LoginedTa__IdRol__398D8EEE" Association="Knyazeva_PPModel.FK__LoginedTa__IdRol__398D8EEE">
+            <End Role="RoleTable" EntitySet="RoleTable" />
+            <End Role="LoginedTable" EntitySet="LoginedTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserTable__ID__3C69FB99" Association="Knyazeva_PPModel.FK__UserTable__ID__3C69FB99">
+            <End Role="LoginedTable" EntitySet="LoginedTable" />
+            <End Role="UserTable" EntitySet="UserTable" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderSpar__IdSta__5CD6CB2B" Association="Knyazeva_PPModel.FK__OrderSpar__IdSta__5CD6CB2B">
+            <End Role="StatusTable" EntitySet="StatusTable" />
+            <End Role="OrderSpareParts" EntitySet="OrderSpareParts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderSpareParts_OrderTable" Association="Knyazeva_PPModel.FK_OrderSpareParts_OrderTable">
+            <End Role="OrderTable" EntitySet="OrderTable" />
+            <End Role="OrderSpareParts" EntitySet="OrderSpareParts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderTabl__TypeO__52593CB8" Association="Knyazeva_PPModel.FK__OrderTabl__TypeO__52593CB8">
+            <End Role="TypeOrderTable" EntitySet="TypeOrderTable" />
+            <End Role="OrderTable" EntitySet="OrderTable" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AcceptEquipment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Picking" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OrderTable" Relationship="Knyazeva_PPModel.FK__AcceptEquipm__ID__778AC167" FromRole="AcceptEquipment" ToRole="OrderTable" />
+        </EntityType>
+        <EntityType Name="ClientTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SurnameClient" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NameClient" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PatronymicClient" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Adress" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OrderTable" Relationship="Knyazeva_PPModel.FK__OrderTabl__IdCli__5070F446" FromRole="ClientTable" ToRole="OrderTable" />
+        </EntityType>
+        <EntityType Name="CostOfWork">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdIssueEquipment" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Cost" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="IssueEquipment" Relationship="Knyazeva_PPModel.FK_CostOfWork_IssueEquipment" FromRole="CostOfWork" ToRole="IssueEquipment" />
+        </EntityType>
+        <EntityType Name="EquipmentInRepair">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="OrderTable" Relationship="Knyazeva_PPModel.FK__EquipmentInR__ID__74AE54BC" FromRole="EquipmentInRepair" ToRole="OrderTable" />
+        </EntityType>
+        <EntityType Name="EquipmentTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameEquipment" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SerialNumber" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OrderTable" Relationship="Knyazeva_PPModel.FK__OrderTabl__IdEqu__5165187F" FromRole="EquipmentTable" ToRole="OrderTable" />
+        </EntityType>
+        <EntityType Name="IssueEquipment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Problem" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SumCost" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CostOfWork" Relationship="Knyazeva_PPModel.FK_CostOfWork_IssueEquipment" FromRole="IssueEquipment" ToRole="CostOfWork" />
+          <NavigationProperty Name="OrderTable" Relationship="Knyazeva_PPModel.FK__IssueEquipme__ID__7A672E12" FromRole="IssueEquipment" ToRole="OrderTable" />
+        </EntityType>
+        <EntityType Name="LoginedTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LoginUser" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordUser" Type="Int32" Nullable="false" />
+          <Property Name="IdRole" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="RoleTable" Relationship="Knyazeva_PPModel.FK__LoginedTa__IdRol__398D8EEE" FromRole="LoginedTable" ToRole="RoleTable" />
+          <NavigationProperty Name="UserTable" Relationship="Knyazeva_PPModel.FK__UserTable__ID__3C69FB99" FromRole="LoginedTable" ToRole="UserTable" />
+        </EntityType>
+        <EntityType Name="OrderSpareParts">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdOrder" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IdStatus" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="StatusTable" Relationship="Knyazeva_PPModel.FK__OrderSpar__IdSta__5CD6CB2B" FromRole="OrderSpareParts" ToRole="StatusTable" />
+          <NavigationProperty Name="OrderTable" Relationship="Knyazeva_PPModel.FK_OrderSpareParts_OrderTable" FromRole="OrderSpareParts" ToRole="OrderTable" />
+        </EntityType>
+        <EntityType Name="OrderTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdClient" Type="Int32" Nullable="false" />
+          <Property Name="IdEquipment" Type="Int32" Nullable="false" />
+          <Property Name="Damage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateOrder" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TypeOrder" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AcceptEquipment" Relationship="Knyazeva_PPModel.FK__AcceptEquipm__ID__778AC167" FromRole="OrderTable" ToRole="AcceptEquipment" />
+          <NavigationProperty Name="ClientTable" Relationship="Knyazeva_PPModel.FK__OrderTabl__IdCli__5070F446" FromRole="OrderTable" ToRole="ClientTable" />
+          <NavigationProperty Name="EquipmentInRepair" Relationship="Knyazeva_PPModel.FK__EquipmentInR__ID__74AE54BC" FromRole="OrderTable" ToRole="EquipmentInRepair" />
+          <NavigationProperty Name="EquipmentTable" Relationship="Knyazeva_PPModel.FK__OrderTabl__IdEqu__5165187F" FromRole="OrderTable" ToRole="EquipmentTable" />
+          <NavigationProperty Name="IssueEquipment" Relationship="Knyazeva_PPModel.FK__IssueEquipme__ID__7A672E12" FromRole="OrderTable" ToRole="IssueEquipment" />
+          <NavigationProperty Name="OrderSpareParts" Relationship="Knyazeva_PPModel.FK_OrderSpareParts_OrderTable" FromRole="OrderTable" ToRole="OrderSpareParts" />
+          <NavigationProperty Name="TypeOrderTable" Relationship="Knyazeva_PPModel.FK__OrderTabl__TypeO__52593CB8" FromRole="OrderTable" ToRole="TypeOrderTable" />
+        </EntityType>
+        <EntityType Name="RoleTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameRole" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LoginedTable" Relationship="Knyazeva_PPModel.FK__LoginedTa__IdRol__398D8EEE" FromRole="RoleTable" ToRole="LoginedTable" />
+        </EntityType>
+        <EntityType Name="StatusTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OrderSpareParts" Relationship="Knyazeva_PPModel.FK__OrderSpar__IdSta__5CD6CB2B" FromRole="StatusTable" ToRole="OrderSpareParts" />
+        </EntityType>
+        <EntityType Name="TypeOrderTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OrderTable" Relationship="Knyazeva_PPModel.FK__OrderTabl__TypeO__52593CB8" FromRole="TypeOrderTable" ToRole="OrderTable" />
+        </EntityType>
+        <EntityType Name="UserTable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="SurnameUser" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NameUser" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LoginedTable" Relationship="Knyazeva_PPModel.FK__UserTable__ID__3C69FB99" FromRole="UserTable" ToRole="LoginedTable" />
+        </EntityType>
+        <Association Name="FK__AcceptEquipm__ID__778AC167">
+          <End Type="Knyazeva_PPModel.OrderTable" Role="OrderTable" Multiplicity="1" />
+          <End Type="Knyazeva_PPModel.AcceptEquipment" Role="AcceptEquipment" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="OrderTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AcceptEquipment">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderTabl__IdCli__5070F446">
+          <End Type="Knyazeva_PPModel.ClientTable" Role="ClientTable" Multiplicity="1" />
+          <End Type="Knyazeva_PPModel.OrderTable" Role="OrderTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClientTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderTable">
+              <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CostOfWork_IssueEquipment">
+          <End Type="Knyazeva_PPModel.IssueEquipment" Role="IssueEquipment" Multiplicity="1" />
+          <End Type="Knyazeva_PPModel.CostOfWork" Role="CostOfWork" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IssueEquipment">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CostOfWork">
+              <PropertyRef Name="IdIssueEquipment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EquipmentInR__ID__74AE54BC">
+          <End Type="Knyazeva_PPModel.OrderTable" Role="OrderTable" Multiplicity="1" />
+          <End Type="Knyazeva_PPModel.EquipmentInRepair" Role="EquipmentInRepair" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="OrderTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EquipmentInRepair">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderTabl__IdEqu__5165187F">
+          <End Type="Knyazeva_PPModel.EquipmentTable" Role="EquipmentTable" Multiplicity="1" />
+          <End Type="Knyazeva_PPModel.OrderTable" Role="OrderTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EquipmentTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderTable">
+              <PropertyRef Name="IdEquipment" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__IssueEquipme__ID__7A672E12">
+          <End Type="Knyazeva_PPModel.OrderTable" Role="OrderTable" Multiplicity="1" />
+          <End Type="Knyazeva_PPModel.IssueEquipment" Role="IssueEquipment" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="OrderTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="IssueEquipment">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__LoginedTa__IdRol__398D8EEE">
+          <End Type="Knyazeva_PPModel.RoleTable" Role="RoleTable" Multiplicity="1" />
+          <End Type="Knyazeva_PPModel.LoginedTable" Role="LoginedTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RoleTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="LoginedTable">
+              <PropertyRef Name="IdRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserTable__ID__3C69FB99">
+          <End Type="Knyazeva_PPModel.LoginedTable" Role="LoginedTable" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Knyazeva_PPModel.UserTable" Role="UserTable" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="LoginedTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserTable">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderSpar__IdSta__5CD6CB2B">
+          <End Type="Knyazeva_PPModel.StatusTable" Role="StatusTable" Multiplicity="1" />
+          <End Type="Knyazeva_PPModel.OrderSpareParts" Role="OrderSpareParts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderSpareParts">
+              <PropertyRef Name="IdStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderSpareParts_OrderTable">
+          <End Type="Knyazeva_PPModel.OrderTable" Role="OrderTable" Multiplicity="1" />
+          <End Type="Knyazeva_PPModel.OrderSpareParts" Role="OrderSpareParts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderSpareParts">
+              <PropertyRef Name="IdOrder" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderTabl__TypeO__52593CB8">
+          <End Type="Knyazeva_PPModel.TypeOrderTable" Role="TypeOrderTable" Multiplicity="1" />
+          <End Type="Knyazeva_PPModel.OrderTable" Role="OrderTable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeOrderTable">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrderTable">
+              <PropertyRef Name="TypeOrder" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Knyazeva_PPModelContainer" CdmEntityContainer="Knyazeva_PP_Entities">
+          <EntitySetMapping Name="AcceptEquipment">
+            <EntityTypeMapping TypeName="Knyazeva_PPModel.AcceptEquipment">
+              <MappingFragment StoreEntitySet="AcceptEquipment">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Picking" ColumnName="Picking" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientTable">
+            <EntityTypeMapping TypeName="Knyazeva_PPModel.ClientTable">
+              <MappingFragment StoreEntitySet="ClientTable">
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="PatronymicClient" ColumnName="PatronymicClient" />
+                <ScalarProperty Name="NameClient" ColumnName="NameClient" />
+                <ScalarProperty Name="SurnameClient" ColumnName="SurnameClient" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CostOfWork">
+            <EntityTypeMapping TypeName="Knyazeva_PPModel.CostOfWork">
+              <MappingFragment StoreEntitySet="CostOfWork">
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IdIssueEquipment" ColumnName="IdIssueEquipment" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EquipmentInRepair">
+            <EntityTypeMapping TypeName="Knyazeva_PPModel.EquipmentInRepair">
+              <MappingFragment StoreEntitySet="EquipmentInRepair">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EquipmentTable">
+            <EntityTypeMapping TypeName="Knyazeva_PPModel.EquipmentTable">
+              <MappingFragment StoreEntitySet="EquipmentTable">
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="NameEquipment" ColumnName="NameEquipment" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IssueEquipment">
+            <EntityTypeMapping TypeName="Knyazeva_PPModel.IssueEquipment">
+              <MappingFragment StoreEntitySet="IssueEquipment">
+                <ScalarProperty Name="SumCost" ColumnName="SumCost" />
+                <ScalarProperty Name="Problem" ColumnName="Problem" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoginedTable">
+            <EntityTypeMapping TypeName="Knyazeva_PPModel.LoginedTable">
+              <MappingFragment StoreEntitySet="LoginedTable">
+                <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+                <ScalarProperty Name="PasswordUser" ColumnName="PasswordUser" />
+                <ScalarProperty Name="LoginUser" ColumnName="LoginUser" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderSpareParts">
+            <EntityTypeMapping TypeName="Knyazeva_PPModel.OrderSpareParts">
+              <MappingFragment StoreEntitySet="OrderSpareParts">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="IdStatus" ColumnName="IdStatus" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IdOrder" ColumnName="IdOrder" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderTable">
+            <EntityTypeMapping TypeName="Knyazeva_PPModel.OrderTable">
+              <MappingFragment StoreEntitySet="OrderTable">
+                <ScalarProperty Name="TypeOrder" ColumnName="TypeOrder" />
+                <ScalarProperty Name="DateOrder" ColumnName="DateOrder" />
+                <ScalarProperty Name="Damage" ColumnName="Damage" />
+                <ScalarProperty Name="IdEquipment" ColumnName="IdEquipment" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RoleTable">
+            <EntityTypeMapping TypeName="Knyazeva_PPModel.RoleTable">
+              <MappingFragment StoreEntitySet="RoleTable">
+                <ScalarProperty Name="NameRole" ColumnName="NameRole" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusTable">
+            <EntityTypeMapping TypeName="Knyazeva_PPModel.StatusTable">
+              <MappingFragment StoreEntitySet="StatusTable">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeOrderTable">
+            <EntityTypeMapping TypeName="Knyazeva_PPModel.TypeOrderTable">
+              <MappingFragment StoreEntitySet="TypeOrderTable">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTable">
+            <EntityTypeMapping TypeName="Knyazeva_PPModel.UserTable">
+              <MappingFragment StoreEntitySet="UserTable">
+                <ScalarProperty Name="NameUser" ColumnName="NameUser" />
+                <ScalarProperty Name="SurnameUser" ColumnName="SurnameUser" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

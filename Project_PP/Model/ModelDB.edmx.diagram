@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ef6f5fd114c54adca409107d840f87f3" Name="Diagram1" ZoomLevel="63">
+        <EntityTypeShape EntityType="Knyazeva_PPModel.AcceptEquipment" Width="1.5" PointX="5.25" PointY="12.125" />
+        <EntityTypeShape EntityType="Knyazeva_PPModel.ClientTable" Width="1.5" PointX="0.75" PointY="9" />
+        <EntityTypeShape EntityType="Knyazeva_PPModel.CostOfWork" Width="1.5" PointX="7.5" PointY="3.375" />
+        <EntityTypeShape EntityType="Knyazeva_PPModel.EquipmentInRepair" Width="1.5" PointX="5.25" PointY="9.875" />
+        <EntityTypeShape EntityType="Knyazeva_PPModel.EquipmentTable" Width="1.5" PointX="0.75" PointY="3.25" />
+        <EntityTypeShape EntityType="Knyazeva_PPModel.IssueEquipment" Width="1.5" PointX="5.25" PointY="3.25" />
+        <EntityTypeShape EntityType="Knyazeva_PPModel.LoginedTable" Width="1.5" PointX="12" PointY="0.875" />
+        <EntityTypeShape EntityType="Knyazeva_PPModel.OrderSpareParts" Width="1.5" PointX="8.25" PointY="6.375" />
+        <EntityTypeShape EntityType="Knyazeva_PPModel.OrderTable" Width="1.5" PointX="3" PointY="5.125" />
+        <EntityTypeShape EntityType="Knyazeva_PPModel.RoleTable" Width="1.5" PointX="9.75" PointY="1.25" />
+        <EntityTypeShape EntityType="Knyazeva_PPModel.StatusTable" Width="1.5" PointX="6" PointY="7" />
+        <EntityTypeShape EntityType="Knyazeva_PPModel.TypeOrderTable" Width="1.5" PointX="0.75" PointY="6" />
+        <EntityTypeShape EntityType="Knyazeva_PPModel.UserTable" Width="1.5" PointX="14.25" PointY="1.125" />
+        <AssociationConnector Association="Knyazeva_PPModel.FK__AcceptEquipm__ID__778AC167" />
+        <AssociationConnector Association="Knyazeva_PPModel.FK__OrderTabl__IdCli__5070F446" />
+        <AssociationConnector Association="Knyazeva_PPModel.FK_CostOfWork_IssueEquipment" />
+        <AssociationConnector Association="Knyazeva_PPModel.FK__EquipmentInR__ID__74AE54BC" />
+        <AssociationConnector Association="Knyazeva_PPModel.FK__OrderTabl__IdEqu__5165187F" />
+        <AssociationConnector Association="Knyazeva_PPModel.FK__IssueEquipme__ID__7A672E12" />
+        <AssociationConnector Association="Knyazeva_PPModel.FK__LoginedTa__IdRol__398D8EEE" />
+        <AssociationConnector Association="Knyazeva_PPModel.FK__UserTable__ID__3C69FB99" />
+        <AssociationConnector Association="Knyazeva_PPModel.FK__OrderSpar__IdSta__5CD6CB2B" />
+        <AssociationConnector Association="Knyazeva_PPModel.FK_OrderSpareParts_OrderTable" />
+        <AssociationConnector Association="Knyazeva_PPModel.FK__OrderTabl__TypeO__52593CB8" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

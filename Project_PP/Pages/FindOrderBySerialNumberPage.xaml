@@ -1,0 +1,51 @@
+﻿<Page x:Class="Project_PP.Pages.FindOrderBySerialNumberPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Project_PP.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="FindOrderBySerialNumberPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="0,0,20,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1.7*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock VerticalAlignment="Center" Margin="10" Style="{StaticResource tbBase}">
+                Найти по серийному<LineBreak/>номеру
+            </TextBlock>
+            <TextBox TextChanged="tbSearch_TextChanged" FontFamily="{StaticResource fontApp}" FontSize="18" Grid.Column="1" Height="40" Margin="10" Name="tbSearch"/>
+        </Grid>
+        <ListView SelectionChanged="listOrders_SelectionChanged" Margin="10" Grid.Row="1" Foreground="Black" FontFamily="{StaticResource fontApp}" FontSize="18" ScrollViewer.CanContentScroll="False" Name="listOrders" HorizontalContentAlignment="Stretch">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding ID}"/>
+                    <GridViewColumn Header="ФИО" DisplayMemberBinding="{Binding ClientTable.Fio, Mode=OneWay}"/>
+                    <GridViewColumn Header="Наименование" DisplayMemberBinding="{Binding EquipmentTable.NameEquipment}"/>
+                    <GridViewColumn Header="Серийный номер" DisplayMemberBinding="{Binding EquipmentTable.SerialNumber}"/>
+                    <GridViewColumn Header="Дата заказа" DisplayMemberBinding="{Binding DateOrder,StringFormat={}dd.MM.yyyy}"/>
+                    <GridViewColumn Header="Статус">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid Width="180" Height="40">
+                                    <Rectangle Fill="{Binding BackgroundStatus}"/>
+                                    <Label VerticalAlignment="Center" HorizontalAlignment="Center" Content="{Binding StatusName, Mode=OneWay}" Foreground="{Binding ForegroundStatus}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock Grid.Row="1" Name="tbEmpty" VerticalAlignment="Center" FontSize="30" Visibility="Collapsed" Foreground="Black" FontWeight="Bold" Text="Нет записей" Margin="10" Style="{StaticResource tbBase}"/>
+        <Button Click="btnBack_Click" HorizontalAlignment="Left" Grid.Row="3" Style="{StaticResource btnStyle}" Margin="10" Name="btnBack" Width="230" Content="Назад" Cursor="Hand"/>
+    </Grid>
+</Page>
